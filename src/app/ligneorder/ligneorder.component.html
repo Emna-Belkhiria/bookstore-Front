@@ -1,0 +1,25 @@
+<form>
+    <h2>All Books</h2>
+    <h5>Total Order</h5><a>{{somme}}</a>
+    <button type="submit" (click)="validate()">Validate</button>
+  <table #table class="table table-bordered">
+      <thead class="thead-light">
+         <th>Line</th>
+         <th>Quantity</th>
+         <th>line price</th>
+      </thead> 
+     <tbody>
+         <tr *ngFor="let order of lineorderservice.list ;let i=index;">
+            <td>  
+             {{order.numLigne}}
+          </td>
+          <td>
+              {{order.quantite}}
+          </td>
+          <td>
+            {{order.prixpd}}
+        </td>
+         </tr>
+     </tbody>
+  </table>
+</form>

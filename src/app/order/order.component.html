@@ -1,0 +1,45 @@
+<form>
+    <h2>All Books</h2>
+    <button type="submit" (click)="purchase()">Purchase</button>
+  <table #table class="table table-bordered">
+      <thead class="thead-light">
+         <th>Book reference</th>
+         <th>Book title</th>
+         <th>Book author</th>
+         <th>Release date</th>
+         <th>Book designation</th>
+         <th>Book unit price</th>
+         <th>Quantity</th>
+      </thead> 
+     <tbody>
+         <tr *ngFor="let book of bookService.list ;let i=index;">
+          <td>  
+                {{book.reference}}
+          </td>
+          <td>
+              {{book.titre}}
+            </td>
+          <td>
+              {{book.auteur}}
+          </td>
+          <td> 
+                {{book.dateRealisation}}
+          </td>
+          <td> 
+              {{book.designation}}
+          </td>
+          <td>{{book.prixUnitaire}}</td>
+          <td>
+              <input type="number" value="1" name="qte" #qte>
+          </td>
+      <td>
+          <button type="button" class="btn btn-success" (click)="addline(book.id,qte.value)">add<span class="material-icons">
+            add
+            </span></button>
+           
+         </td>
+       </tr>
+     </tbody>
+     </table>
+     </form>
+

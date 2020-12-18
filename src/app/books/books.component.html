@@ -1,0 +1,38 @@
+<form>
+    <h2>All Books</h2>
+  <table class="table table-bordered">
+      <thead class="thead-light">
+         <th>Book reference</th>
+         <th>Book title</th>
+         <th>Book author</th>
+         <th>Release date</th>
+         <th>Book designation</th>
+         <th>Book unit price</th>
+      </thead> 
+     <tbody>
+         <tr *ngFor="let book of bookService.list ;let i=index;">
+          <td>  
+                {{book.reference}}
+          </td>
+          <td>
+              {{book.titre}}
+            </td>
+          <td>
+              {{book.auteur}}
+          </td>
+          <td> 
+                {{book.dateRealisation}}
+          </td>
+          <td> 
+              {{book.designation}}
+          </td>
+          <td>{{book.prixUnitaire}}</td>
+      <td>
+          <button type="button" class="btn btn-success" ><span class="material-icons">
+            create
+            </span></button>
+         </td>
+       </tr>
+     </tbody>
+     </table>
+     </form>
